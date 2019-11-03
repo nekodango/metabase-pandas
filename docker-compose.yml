@@ -23,16 +23,3 @@ services:
       - "5432:5432"
     volumes:
       - ./data/postgres_data:/var/lib/postgresql/data
-
-  pgadmin4:
-    container_name: pgadmin4
-    image: dpage/pgadmin4:4.13
-    ports:
-      - 8000:80
-    volumes:
-      - ./data/pgadmin4_data:/var/lib/pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: metabase@example.com
-      PGADMIN_DEFAULT_PASSWORD: metabase
-    depends_on:
-      - postgres
